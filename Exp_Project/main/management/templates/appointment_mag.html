@@ -1,0 +1,60 @@
+{% extends 'admin-tables-temple.html' %}
+
+{% block content %}
+
+    <div style="margin-bottom: 10px">
+
+    </div>
+    <div class="card mb-4">
+        <div class="card-header">
+
+            <i class="fas fa-table me-1"></i>
+            Appointment Table
+        </div>
+
+        <!-- <form method="post" id="app_mag_gorm">
+            {% csrf_token %} -->
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Brief Description</th>
+                        <th>Doctor</th>
+                        <th>Location</th>
+                        <th>Date</th>
+                        <th>Option</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Brief Description</th>
+                        <th>Doctor</th>
+                        <th>Location</th>
+                        <th>Date</th>
+                        <th>Option</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    {% for obj in dataset %}
+                        <tr>
+                            <td>{{ obj.name }}</td>
+                            <td>{{ obj.comment }}</td>
+                            <td>{{ obj.doctor }}</td>
+                            <td>{{ obj.location }}</td>
+                            <td>{{ obj.date|date:'Y-m-d'}}</td>
+                            <td> 
+                                <a class="btn btn-danger btn-xs" type="submit" href="{% url 'appointment_edit' obj.id %}">edit</a>
+                                <a class="btn btn-primary btn-xs" href="{% url 'appointment_delete' obj.id %}">delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        <!-- </form> -->
+    </div>
+
+
+{% endblock %}
