@@ -1,4 +1,4 @@
-# nginx镜像
+# nginx image
 FROM nginx:latest
 
 # 删除原有配置文件，创建静态资源文件夹和ssl证书保存文件夹
